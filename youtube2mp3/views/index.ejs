@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Youtube 2 MP3 Converter</title>
+</head>
+<body>
+
+    <div class="top-container">
+        <form action="/convert-mp3" method="post" id="form">
+            <h1>Kayla's</h1>
+            <i class="fa-brands fa-youtube iconsize"></i>
+            <h1>YouTube 2 MP3 Converter</h1>
+            <h4>Enter the video ID.</h4>
+            <div class="convertsection">
+                <input type="text" name="videoID" placeholder="Enter Video ID" required>
+                <button id="convert-btn" type="submit">Convert</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="bottom-container">
+        <% if (typeof success != "undefined" && success) { %>
+            <div class="success">
+                <p><%= song_title %></p>
+                <a href="<%= song_link %>"><button id="download-btn">Download</button></a>
+            </div>
+        <% } else if (typeof success != "undefined" && !success) { %>
+            <div class="errors">
+                <p><%= message %></p>
+            </div>
+        <% } %>
+    </div>
+    
+</body>
+</html>
